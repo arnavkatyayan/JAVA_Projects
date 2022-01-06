@@ -1,0 +1,96 @@
+ATM MANAGEMENT SYSTEM(JAVA SOURCE CODE):
+
+import java.util.*;
+
+class Bank{
+  String name;
+  int age;
+  int balance;
+Scanner sc=new Scanner(System.in);
+  public void entry(){
+    
+    System.out.println("Please enter your name");
+    name=sc.nextLine();
+    System.out.println("Please enter the age");
+    age=sc.nextInt();
+    System.out.println("Please enter the balance");
+    balance=sc.nextInt();
+    System.out.println("Thankyou for the details dear applicant");
+  }
+  public void withdraw(){
+   int w;
+   
+   System.out.println("Enter the amount that you would want to withdraw");
+   w=sc.nextInt();
+   if(w>balance){
+     System.out.println("Sorry applicant you dont have enough balance you only have"+balance+"left");
+}
+else{
+  balance=balance-w;
+  System.out.println("Thankyou for withdrawing from JAVA bank you current balance is=" +balance);
+}
+  }
+public void transfer(){
+  int t;
+  System.out.println("Enter the amount that you would want to transfer dear applicant");
+  t=sc.nextInt();
+  balance=balance+t;
+  System.out.println("Thankyou for transfering the money at JAVA bank your current balance is=" +balance);
+}
+public void slip(){
+  System.out.println("The name of the applicant is=" +name);
+  System.out.println("The age of the applicant is=" +age);
+  System.out.println("The final balance of the applicant is=" +balance);
+} 
+  
+  }
+
+public class Main{
+  public static void main(String[] args){
+    System.out.println("WELCOME TO JAVA BANK");
+    System.out.println("Great to have you in the bank");
+   Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+     Bank b=new Bank();
+    do{
+    System.out.println("enter the option you want to choose");
+    int x=sc.nextInt();
+    System.out.println("1:Enter the new details");
+    System.out.println("2:Withdraw the account");
+    System.out.println("3:Transfering the account");
+    System.out.println("4:Printing the slip");
+
+    
+   if(x==1){
+     System.out.println("Thankyou for choosing the option");
+    b.entry();
+    }
+    else if(x==2){
+      System.out.println("Thankyou for choosing the option");
+      b.withdraw();
+    }
+    else if(x==3){
+      System.out.println("Thanku for choosing the option");
+      b.transfer();
+    }
+    else if(x==4){
+      b.slip();
+    }
+
+  else{
+    for(int i=0;i<1;i++){
+      break;
+    }
+
+  }
+    }while(n<=4);
+ 
+
+
+
+
+    
+
+
+  }
+}
